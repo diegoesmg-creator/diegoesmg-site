@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diego Garcia · Links</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --cream:#F2ECE3; --sand:#E9DFD1; --line:#CFC5B6;
+    --ink:#1C1B18; --muted:#5E574D;
+    --navy:#13303F; --rust:#A94F2C; --peach:#E7A07C;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    font-family:Manrope,system-ui,sans-serif;
+    background:var(--cream); color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  .wrap{max-width:460px; margin:0 auto; padding:0 0 48px}
+
+  /* Hero */
+  .hero{position:relative; height:min(118vw,540px); overflow:hidden; background:var(--navy)}
+  .hero img{width:100%; height:100%; object-fit:cover; object-position:50% 38%; display:block}
+  .hero::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(19,48,63,0) 45%, rgba(19,48,63,.55) 72%, rgba(19,48,63,.92) 100%);
+  }
+  .hero-text{position:absolute; left:24px; right:24px; bottom:26px; z-index:1; color:var(--cream)}
+  .kicker{font-size:11px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--peach); margin-bottom:10px}
+  h1{margin:0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:58px; line-height:.92; letter-spacing:-.01em}
+  h1 em{font-style:italic}
+  .handle{margin-top:12px; display:flex; align-items:center; gap:10px; font-size:14px; font-weight:600}
+  .handle a{color:var(--cream); text-decoration:none; border-bottom:1px solid rgba(242,236,227,.4)}
+  .dot{width:4px; height:4px; border-radius:50%; background:var(--peach)}
+
+  /* Tabs */
+  .tabs{
+    display:grid; grid-template-columns:1fr 1fr; gap:4px;
+    margin:22px 20px 18px; padding:4px; border-radius:999px;
+    background:var(--sand);
+  }
+  .tab{
+    appearance:none; border:0; cursor:pointer; border-radius:999px;
+    padding:12px 10px; font:700 12px/1 Manrope,sans-serif;
+    letter-spacing:.14em; text-transform:uppercase;
+    color:var(--muted); background:transparent; transition:background .2s,color .2s;
+  }
+  .tab[aria-selected="true"]{background:var(--navy); color:var(--cream)}
+  .tab:focus-visible{outline:2px solid var(--rust); outline-offset:2px}
+
+  .panel{padding:0 20px}
+  .panel[hidden]{display:none}
+
+  /* Link cards */
+  .links{display:flex; flex-direction:column; gap:12px}
+  .card{
+    display:flex; align-items:center; gap:16px;
+    padding:18px 18px 18px 20px; border-radius:6px;
+    background:#FBF8F3; border:1px solid var(--line);
+    color:var(--ink); text-decoration:none;
+    transition:transform .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .card:hover{transform:translateY(-1px); border-color:var(--ink)}
+  .card:active{transform:translateY(0)}
+  .card .txt{flex:1; min-width:0; display:flex; flex-direction:column; gap:4px}
+  .card .ttl{font-family:'Instrument Serif',Georgia,serif; font-size:27px; line-height:1}
+  .card .sub{font-size:13.5px; color:var(--muted); line-height:1.35}
+  .arrow{flex:none; width:36px; height:36px; border-radius:50%; display:grid; place-items:center; border:1px solid var(--line); font-size:16px}
+
+  .card.featured{background:var(--navy); border-color:var(--navy); color:var(--cream)}
+  .card.featured .sub{color:#C9D2D6}
+  .card.featured .arrow{border-color:rgba(242,236,227,.35)}
+  .badge{
+    align-self:flex-start; margin-bottom:4px;
+    font-size:10.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+    color:#fff; background:var(--rust); padding:4px 8px; border-radius:3px;
+  }
+
+  /* Brands */
+  .intro{font-size:14px; color:var(--muted); line-height:1.5; margin:0 0 6px}
+  .brands{list-style:none; margin:0; padding:0; border-top:1px solid var(--ink)}
+  .brands a{
+    display:flex; align-items:center; gap:14px;
+    padding:16px 2px; border-bottom:1px solid var(--line);
+    color:var(--ink); text-decoration:none;
+  }
+  .brands a:hover .bname{color:var(--rust)}
+  .num{flex:none; width:26px; font-size:12px; font-weight:700; color:var(--rust); letter-spacing:.06em}
+  .bname{flex:1; font-family:'Instrument Serif',Georgia,serif; font-size:25px; line-height:1.05; transition:color .15s}
+  .bname small{display:block; font-family:Manrope,sans-serif; font-size:12.5px; color:var(--muted); margin-top:3px}
+  .watch{flex:none; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+
+  footer{margin:34px 20px 0; padding-top:20px; border-top:1px solid var(--line); text-align:center; font-size:12px; color:var(--muted); letter-spacing:.04em}
+  footer a{color:var(--ink); font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <img src="foto.jpg" alt="Diego Garcia caminhando no alto de uma serra">
+    <div class="hero-text">
+      <div class="kicker">Lifestyle · Viagem · Moda · Wakeboard</div>
+      <h1>Diego <em>Garcia</em></h1>
+      <div class="handle">
+        <a href="https://www.instagram.com/odiego_garcia/">@odiego_garcia</a>
+        <span class="dot"></span><span>Brasília, Brasil</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Seções">
+    <button class="tab" role="tab" id="tab-links" aria-controls="links" aria-selected="true">Links</button>
+    <button class="tab" role="tab" id="tab-marcas" aria-controls="marcas" aria-selected="false">Marcas trabalhadas</button>
+  </nav>
+
+  <section class="panel" id="links" role="tabpanel" aria-labelledby="tab-links">
+    <div class="links">
+      <a class="card featured" id="misfits-link" href="https://misfitscompany.com.br/discount/DIEGOOD">
+        <div class="txt">
+          <span class="badge">Cupom já ativado</span>
+          <span class="ttl">MISFITS</span>
+          <span class="sub">Se quiser encontrar as roupas que eu uso, entra pelo link que você já garante 10% de desconto.</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="card" href="https://www.youtube.com/@odiegogarcia">
+        <div class="txt">
+          <span class="ttl">YouTube</span>
+          <span class="sub">Acompanhe aqui um pouco do que eu vivo.<br>Lifestyle, viagens, wakeboard e resenha.</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="card" href="midiakit/">
+        <div class="txt">
+          <span class="ttl">Mídia kit</span>
+          <span class="sub">Para marcas:<br>História, números e formatos com os quais trabalho.</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="panel" id="marcas" role="tabpanel" aria-labelledby="tab-marcas" hidden>
+    <p class="intro">Alguns dos trabalhos que fiz com marcas. Toca pra assistir.</p>
+    <ul class="brands" id="brand-list"></ul>
+  </section>
+
+  <footer>
+    Parcerias: <a href="https://www.instagram.com/odiego_garcia/">@odiego_garcia</a>
+  </footer>
+</div>
+
+<script>
+  const brands = [
+    ["MISFITS", "Reel", "https://www.instagram.com/reel/DfxsnRVBcNB/"],
+    ["UV Line", "Reel", "https://www.instagram.com/reel/DDhiaSoxPPb/"],
+    ["App Blis", "Reel", "https://www.instagram.com/reel/DALkL9Hu9I4/"],
+    ["Storeboardgo", "Reel", "https://www.instagram.com/reel/DWpMuQhBBoT/"],
+    ["Papelito Brasil", "Reel", "https://www.instagram.com/reel/CnhOganBMZu/"],
+    ["Kouda BR", "Reel", "https://www.instagram.com/reel/C6wz0P8OFYC/"],
+    ["American Crime", "Reel", "https://www.instagram.com/reel/C-xkPJAu1Z0/"],
+    ["VZ Joalheria", "Reel", "https://www.instagram.com/reel/DXwsEhDAWrk/"],
+    ["Sol Coffee Club", "Reel · Chipre", "https://www.instagram.com/reel/DewqocOt9Yf/"]
+  ];
+  const list = document.getElementById("brand-list");
+  brands.forEach(([name, sub, url], i) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<a href="${url}">
+      <span class="num">${String(i + 1).padStart(2, "0")}</span>
+      <span class="bname">${name}<small>${sub}</small></span>
+      <span class="watch">Assistir ↗</span></a>`;
+    list.appendChild(li);
+  });
+
+  const tabs = [...document.querySelectorAll(".tab")];
+  function show(id){
+    tabs.forEach(t => {
+      const on = t.getAttribute("aria-controls") === id;
+      t.setAttribute("aria-selected", on);
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+  }
+  tabs.forEach(t => t.addEventListener("click", () => {
+    const id = t.getAttribute("aria-controls");
+    show(id);
+    try { history.replaceState(null, "", id === "marcas" ? "#marcas" : "#links"); } catch(e) {}
+  }));
+  function fromHash(){ show(location.hash === "#marcas" ? "marcas" : "links"); }
+  window.addEventListener("hashchange", fromHash);
+  fromHash();
+</script>
+</body>
+</html>
